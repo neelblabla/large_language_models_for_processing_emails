@@ -2,8 +2,8 @@
 Script to create a labelled df using UC Berkeley System.
 """
 
+# Import of necessary libraries
 import pandas as pd
-import os
 
 # Load the CSV file
 df = pd.read_csv("../brianray-enron-email-dataset/data/enron_05_17_2015_with_labels_v2.csv", low_memory=False)
