@@ -10,3 +10,6 @@
 5. Select a test sample and apply the LLM to the test sample to get the categories for the mails included in the test sample from what the LLM has learned in step 4)
 6. Compare the results in step 5) with the categories you would have annotated manually to get a measure for the quality of your results
 7. If results are bad either change the LLM or increase the training sample
+
+PEFT Fine-Tuned Model - https://huggingface.co/neelblabla/email-classification-llama2-7b-peft
+Labeled Enron Dataset for Fine-Tuning - https://huggingface.co/datasets/neelblabla/enron_labeled_email-llama2-7b_finetuning
