@@ -1,16 +1,21 @@
-# large_language_models_for_processing_emails
+## Fine-tuning Llama2-7b llm for categorising emails for Deutsche Bahn
 
+Hi Welcome!
 
-### llama2-7b for categorising emails for Deutsche Bahn
+In this repo, we perform parameter efficient fine tuning on Meta's Llama2-7b large language model using Enron email corpus to demonstrate a proof of concept around email classification for Deutsche Bahn.
 
-1. Implement an annotation tool to annotate a subset of the mails in categories. We use doccano (python based), but feel free to use whatever you want
-2. Upload a subset of the mails (selection is your choice) to the annotation tool (in doccano you can easily upload the mails as text as provided by the Enron corpus). I suggest to annotate as first step between 500 and 1.000 mails
-3. Annotate the 500 - 1.000 mails into categories. I suggest between 20 and 30 categories. The choice of the categories is up to you, e.g. you can use “Summary of a meeting”, “mail to customer” or whatever seems reasonable to you after having got a feeling for the mails included in the dataset
-4. Feed the annotated mail in a LLM
-5. Select a test sample and apply the LLM to the test sample to get the categories for the mails included in the test sample from what the LLM has learned in step 4)
-6. Compare the results in step 5) with the categories you would have annotated manually to get a measure for the quality of your results
-7. If results are bad either change the LLM or increase the training sample
+Following is the workflow:
+1. Enron email corpus is an open dataset of more than 500,000 raw emails. We work on a subest of ~1700 pre-labeled emails available here - https://data.world/brianray/enron-email-dataset
+2. We narrowed down to lables in one layer i.e. we only consider 'Cat_1_level_1'and 'Cat_1_level_2' exclusively for our purpose. The original (layered) labeling methodology is explained in detail here - https://datascience.stackexchange.com/questions/92341/how-to-read-the-labeled-enron-dataset-categories/92737#92737
+3. 'Regular Expressions' methods are used to clean the heavily unstructured email bodies in the labeled dataset. Dataset is split into training (~1400) and testing (~300) subsets. Final training dataset is hosted here - https://huggingface.co/datasets/neelblabla/enron_labeled_email-llama2-7b_finetuning
+4. Prompts are templated on the final training dataset and parameter efficient finetuning is performed on Llama2-7b using this dataset. The parameters of the models are merged and the final fine-tuned model is hosted in the following repo - https://huggingface.co/neelblabla/email-classification-llama2-7b-peft
+5. Model is finally evaluated on the testing dataset.
+6. All the fine-tuning and evaluation computations are performed using T4 GPUs on Google Collab notebooks.
+
+*******
 
 PEFT Fine-Tuned Model - https://huggingface.co/neelblabla/email-classification-llama2-7b-peft
 
 Labeled Enron Dataset for Fine-Tuning - https://huggingface.co/datasets/neelblabla/enron_labeled_email-llama2-7b_finetuning
+
+*******
