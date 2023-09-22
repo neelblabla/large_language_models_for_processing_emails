@@ -1,4 +1,4 @@
-## llama2-7b for categorising emails for Deutsche Bahn
+## Fine-tuning Llama2-7b llm for categorising emails for Deutsche Bahn
 
 Hi Welcome!
 
