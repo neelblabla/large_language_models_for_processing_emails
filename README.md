@@ -12,8 +12,10 @@ Following is the workflow:
 5. Model is finally evaluated on the testing dataset.
 6. All the fine-tuning and evaluation computations are performed using T4 GPUs on Google Collab notebooks.
 
-
+*******
 
 PEFT Fine-Tuned Model - https://huggingface.co/neelblabla/email-classification-llama2-7b-peft
 
 Labeled Enron Dataset for Fine-Tuning - https://huggingface.co/datasets/neelblabla/enron_labeled_email-llama2-7b_finetuning
+
+*******
