@@ -10,7 +10,7 @@ Following is the workflow:
 3. 'Regular Expressions' methods are used to clean the heavily unstructured email bodies in the labeled dataset. Dataset is split into training (~1400) and testing (~300) subsets. Final training dataset is hosted here - https://huggingface.co/datasets/neelblabla/enron_labeled_email-llama2-7b_finetuning
 4. Prompts are templated on the final training dataset and parameter efficient finetuning is performed on Llama2-7b using this dataset. The parameters of the models are merged and the final fine-tuned model is hosted in the following repo - https://huggingface.co/neelblabla/email-classification-llama2-7b-peft
 5. Model is finally evaluated on the testing dataset (maximum length of input test-prompts restricted to 100) - 65% of model-generated responses match the human labels of the emails.
-6. Model's performance degrades if the maximum length of input test-prompts are increased from 100 to 200, 300, etc.
+6. Model's performance degrades if the maximum length of input test-prompts are increased to 180, 200, 300, etc.
 7. All the fine-tuning and evaluation computations are performed using T4 GPUs on Google Collab notebooks.
 
 *******
