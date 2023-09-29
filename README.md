@@ -12,7 +12,7 @@ Following is the workflow:
 5. Model is finally evaluated on the testing dataset (maximum length of input test-prompts restricted to 100) - 65% of model-generated responses have strong indicative signals in the responses matching the human labels of the emails.
 6. Model's performance degrades if the maximum length of input test-prompts are increased to 180, 200, 300, etc.
 
-All the fine-tuning and evaluation computations are performed using T4 GPUs on Google Collab notebooks.
+All the fine-tuning and evaluation computations are performed using T4 GPUs on Google Collab platform.
 
 *******
 
