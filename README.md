@@ -1,6 +1,6 @@
 ## Fine-tuning Llama2-7b llm for classifying emails for Deutsche Bahn
 
-Hi Welcome!
+Hi, welcome!
 
 In this repo, we perform parameter efficient fine tuning on Meta's Llama2-7b large language model using Enron email corpus to demonstrate a proof of concept around email classification for Deutsche Bahn.
 
