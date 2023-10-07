@@ -9,19 +9,19 @@ Following is the workflow:
 2. We narrowed down to lables in one layer i.e. we only consider 'Cat_1_level_1'and 'Cat_1_level_2' exclusively for our purpose. The original (layered) labeling methodology is explained in detail here - https://datascience.stackexchange.com/questions/92341/how-to-read-the-labeled-enron-dataset-categories/92737#92737
 3. 'Regular Expressions' methods are used to clean the heavily unstructured email bodies in the labeled dataset along with lemmatization of email subject and body. ( Dataset is split into training (~1400) and testing (~300) subsets. Final training dataset is hosted on huggingface here - https://huggingface.co/datasets/neelblabla/enron_labeled_email-llama2-7b_finetuning )
 
-# Llama2-7b
+### Llama2-7b
 1. Prompts are generated on the final training dataset and parameter efficient finetuning is performed on Llama2-7b using this dataset. The parameters of the models are merged and the final fine-tuned model is hosted in the following huggingface repo - https://huggingface.co/neelblabla/email-classification-llama2-7b-peft
 2. Model is finally evaluated on the testing dataset (maximum length of input test-prompts restricted to 100) - 65% of model-generated responses have strong indicative signals in the responses matching the human labels of the emails.
 3. It is observed that model's performance degrades if the maximum length of input test-prompts are increased to 180, 200, 300, etc.
 
-# BERT base
+### BERT base
 1. We employ a pre-trained BERT base model containing 110 million parameters.
 2. The email content is tokenized using BERT's pre-trained tokenizer.
 3. To enhance training efficiency, we freeze the first 8 layers of the model, focusing our fine-tuning efforts exclusively on the remaining 4 layers using our training data.
 4. For comprehensive regularization and optimization, you can refer to the specific methods and hyperparameters detailed in the accompanying code.
 5. Additionally, we introduce a classifier layer atop the BERT model, tailored to the number of output classes required for the task at hand.
 
-# XLNet base
+### XLNet base
 Similar procedure as BERT
 
 *******
