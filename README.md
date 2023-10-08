@@ -26,8 +26,8 @@ Similar procedure as BERT
 
 *******
 
-PEFT Fine-Tuned Model - https://huggingface.co/neelblabla/email-classification-llama2-7b-peft
+PEFT Fine-Tuned Llama2-7b Model - https://huggingface.co/neelblabla/email-classification-llama2-7b-peft
 
-( Labeled Enron Dataset for Fine-Tuning - https://huggingface.co/datasets/neelblabla/enron_labeled_email-llama2-7b_finetuning )
+( Labeled Enron Dataset for Fine-Tuning on Llama2-7b - https://huggingface.co/datasets/neelblabla/enron_labeled_email-llama2-7b_finetuning )
 
 *******
