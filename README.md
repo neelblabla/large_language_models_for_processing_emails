@@ -8,7 +8,7 @@ Following is the workflow:
 1. Enron email corpus is an open dataset of more than 500,000 raw emails. We work on a subest of ~1700 pre-labeled emails available here - https://data.world/brianray/enron-email-dataset and another subset of chat GPT3.5 labelled ~12000.
 2. We narrowed down to lables in one layer i.e. we only consider 'Cat_1_level_1'and 'Cat_1_level_2' exclusively for our purpose. The original (layered) labeling methodology is explained in detail here - https://datascience.stackexchange.com/questions/92341/how-to-read-the-labeled-enron-dataset-categories/92737#92737
 3. 'Regular Expressions' methods are used to clean the heavily unstructured email bodies in the labeled dataset along with lemmatization of email subject and body. ( Dataset is split into training (~1400) and testing (~300) subsets. Final training dataset is hosted on huggingface here - https://huggingface.co/datasets/neelblabla/enron_labeled_email-llama2-7b_finetuning )
-4. Following Models and methodologies are used further:
+4. Following models and methodologies are used further:
 
 ### Llama2-7b
 1. Prompts are generated on the final training dataset and parameter efficient finetuning is performed on Llama2-7b using this dataset. The parameters of the models are merged and the final fine-tuned model is hosted in the following huggingface repo - https://huggingface.co/neelblabla/email-classification-llama2-7b-peft
