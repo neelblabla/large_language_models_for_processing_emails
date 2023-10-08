@@ -1,4 +1,4 @@
-## Fine-tuning Llama2-7b, BERT base, XLNet base llm for classifying emails for Deutsche Bahn
+## Fine-tuning Llama2-7b, BERT base, XLNet base llm(s) for classifying emails for Deutsche Bahn
 
 Hi, welcome!
 
