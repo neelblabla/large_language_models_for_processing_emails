@@ -15,15 +15,15 @@ Following is the workflow:
 2. Model is finally evaluated on the testing dataset (maximum length of input test-prompts restricted to 100) - 65% of model-generated responses have strong indicative signals in the responses matching the human labels of the emails.
 3. It is observed that model's performance degrades if the maximum length of input test-prompts are increased to 180, 200, 300, etc.
 
-### BERT base
+### BERT_base_uncased-100m
 1. We employ a pre-trained BERT base model containing 110 million parameters.
 2. The email content is tokenized using BERT's pre-trained tokenizer.
 3. To enhance training efficiency, we freeze the first 8 layers of the model, focusing our fine-tuning efforts exclusively on the remaining 4 layers using our training data.
 4. For comprehensive regularization and optimization, you can refer to the specific methods and hyperparameters detailed in the accompanying code.
 5. Additionally, we introduce a classifier layer atop the BERT model, tailored to the number of output classes required for the task at hand.
 
-### XLNet base
-Similar procedure as BERT
+### XLNet_base-110m
+Similar workflow as BERT
 
 *******
 
